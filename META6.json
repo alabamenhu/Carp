@@ -1,0 +1,17 @@
+{
+  "name": "Carp",
+  "description": "An implementation of Carp in Raku",
+  "version": "0.1",
+  "perl": "6.*",
+  "auth": "Matthew ‘Matéu’ Stephen Stuckwisch",
+  "depends": [],
+  "build-depends": [],
+  "test-depends": [],
+  "provides": {
+    "Carp": "lib/Carp.pm6"
+  },
+  "resources": [],
+  "license": "Artistic-2.0",
+  "source-url": "Write me!",
+  "raku": "6.*"
+}
