@@ -42,9 +42,15 @@ carp "foo";   # output: foo
 
 The following table is a quick reference guide on the meaning:
 
-|                | **Warns** | **Dies** |
-| **No trace**   |   carp    |   croak  |
-| **Backtrace**  |  cuckle   |  confess |
+```
+            ┏━━━━━━━━━━┯━━━━━━━━━━━┓
+            ┃  Warns   │    Dies   ┃
+┏━━━━━━━━━━━╋━━━━━━━━━━┿━━━━━━━━━━━┫
+┃ No trace  ┃   carp   │   croak   ┃
+┠───────────╂──────────┼───────────┨
+┃ Backtrace ┃  cuckle  │  confess  ┃
+┗━━━━━━━━━━━┻━━━━━━━━━━┷━━━━━━━━━━━┛
+```
 
 `carp` and `cuckle` will only warn (`CX-Warn`), and normally not interrupt your program flow.
 `croak` and `confess` will die, and must be manually resumed if recovery is possible.
