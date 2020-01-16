@@ -73,7 +73,6 @@ this, and instead of seeing the out "Croak:", you'll get a little frog saying it
 No other functionality is changed:
 
 ## Examples
-![Regex::FuzzyToken for Raku](resources/logo.png)
 
 ```raku
 use Carp :all;
