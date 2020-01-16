@@ -1,4 +1,4 @@
-# Carp
+![Carp for Raku](docs/logo.png)
 
 Carp is a module that lets you identify errors from the **caller** side, rather than from within
 *callee* (this means if you call `foo` inside of `bar`, and `foo` carps, the error will appear
