@@ -11,15 +11,15 @@ all of the same features.  Additional options will be enabled in the future.
 ## Usage
 
 By default, Carp only imports a single routine, C<carp>.  You can add the others in with the
-named arguments `:cuckle`, `:croak`, `:confess`, or for ease, you can use `:all`.  There are
+named arguments `:cluck`, `:croak`, `:confess`, or for ease, you can use `:all`.  There are
 two options that can be specified with positional parameters, `'block'` and `'ofun'`.
 
 ```raku
 use Carp;                    # imports only carp
-use Carp :cuckle;            # imports carp and cuckle
+use Carp :cluck;             # imports carp and cluck
 use Carp :croak, :confess;   # imports carp, croak, and confess
 use Carp :X;                 # imports exceptions (useful in CATCH blocks)
-use Carp :all                # imports carp, cuckle, croak, and confess
+use Carp :all;               # imports carp, cluck, croak, and confess
 use Carp 'block';            # enable block-level status
 use Carp 'ofun';             # use -Ofun optimization
 use Carp :all, <block ofun>; # import/enable everything
@@ -29,13 +29,12 @@ To use, just call the routine, optionally with a message.
 
 ```raku
 use Carp;
-carp;   # output: Carped: something's wrong
-        #           in block <foo> at <file> line <line>
+carp;   # output: │Carped: something's wrong
+        #         │  in block <foo> at <file> line <line>
         # (the values in <> will have useful information)
 
-carp "foo";   # output: foo
-              #           in block <foo> at <file> line <line>
-              # (the values in <> will have useful information)
+carp "foo";   # output: │foo
+              #         │  in block <foo> at <file> line <line>
 
 ```
 ## Differences
@@ -48,14 +47,14 @@ The following table is a quick reference guide on the meaning:
 ┏━━━━━━━━━━━╋━━━━━━━━━━┿━━━━━━━━━━━┫
 ┃ No trace  ┃   carp   │   croak   ┃
 ┠───────────╂──────────┼───────────┨
-┃ Backtrace ┃  cuckle  │  confess  ┃
+┃ Backtrace ┃   cluck  │  confess  ┃
 ┗━━━━━━━━━━━┻━━━━━━━━━━┷━━━━━━━━━━━┛
 ```
 
-`carp` and `cuckle` will only warn (`CX-Warn`), and normally not interrupt your program flow.
+`carp` and `cluck` will only warn (`CX-Warn`), and normally not interrupt your program flow.
 `croak` and `confess` will die, and must be manually resumed if recovery is possible.
 `carp` and `croak` will only output a single indicating where the issue occurred.
-`cuckle` and `confess` will output a full backtrace.
+`cluck` and `confess` will output a full backtrace.
 
 ## Options
 
