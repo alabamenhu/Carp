@@ -163,3 +163,7 @@ the module.
 
 The original Carp was created by Larry Wall and Andrew Main (Zefram).  Because of differences
 between Perl and Raku, no code was ported directly.
+
+The logo.png was created by me (and licensed under the Artistic License 2.0), based on
+an [image of a fish](https://www.pxfuel.com/en/free-photo-xsgne) licensed under
+[CC-0](https://creativecommons.org/publicdomain/zero/1.0/).
