@@ -64,7 +64,7 @@ sub EXPORT (**@args) {
       # Ignores backtrace creation: 1 frame for carp(),
       # Older versions of Rakudo were also erroneously including 2 frames from Backtrace itself.
       my $comp = ($*RAKU // $*PERL).compiler; # $*PERL is deprecated
-      my $skip-frames = $comp.name eq 'rakudo' && $comp.version < v2020.02.1.116.g.358325401
+      my $skip-frames = $comp.name eq 'rakudo' && $comp.version < v2020.02.1.109.g7c3681647
                             ?? 3
                             !! 1;
       my @frames = Backtrace.new(1).list;
