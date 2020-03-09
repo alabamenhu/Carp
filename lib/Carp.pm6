@@ -61,8 +61,13 @@ sub EXPORT (**@args) {
     # Must export this way because if no named arguments are used
     # then anything with just 'is export' won't be exported.
     '&carp' => sub carp($message?, --> True) {
-      # Ignores backtrace creation (2 frames) and carp() (1 frame)
-      my @frames = Backtrace.new(3).list;
+      # Ignores backtrace creation: 1 frame for carp(),
+      # Older versions of Rakudo were also erroneously including 2 frames from Backtrace itself.
+      my $comp = ($*RAKU // $*PERL).compiler; # $*PERL is deprecated
+      my $skip-frames = $comp.name eq 'rakudo' && $comp.version < v2020.02.1.116.g.358325401
+                            ?? 3
+                            !! 1;
+      my @frames = Backtrace.new(1).list;
 
       my $line = @frames.head.line; # line of error
 
